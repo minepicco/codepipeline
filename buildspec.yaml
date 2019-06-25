@@ -3,5 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - 
-      - 
+      - echo "Getting Dockerfile..."
+      - curl "https://raw.githubusercontent.com/minepicco/dockerfiles/master/squid/dockerfile" > Dockerfile
+      - echo "Building Container Image..."
+      - docker build --no-cache -t minepicco/newsquid:02 .
+  
