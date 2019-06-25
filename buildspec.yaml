@@ -7,6 +7,6 @@ phases:
       - curl "https://raw.githubusercontent.com/minepicco/dockerfiles/master/squid/dockerfile" > Dockerfile
       - echo "Building Container Image..."
       - docker build --no-cache -t minepicco/newsquid:02 .
-  push:
+  post-build:
     commands:
       - $(aws ecr get-login --region us-east-2 | sed -e "s/-e none//)
